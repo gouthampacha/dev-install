@@ -62,6 +62,9 @@ network_config:
     nm_controlled: false
     hotplug: true
     promisc: false
+{% if ovs_hw_offload %}
+    link_mode: switchdev
+{% endif %}
 {% else %}
   - type: interface
     name: dummy1
